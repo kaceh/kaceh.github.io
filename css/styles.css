@@ -1,6 +1,7 @@
 :root{
     --black: #0A0A0A;
     --white: #f8f8f8;
+    --grey: #919090;
 }
 
 /* Mobile Styles - below 768px */
@@ -63,14 +64,32 @@
 *{
     margin: 0;
     /* For Development Purpose */
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+
+nav {
+    width: 100%;
+}
+
+.nav-flex{
+    display: flex;
+    width: 60%;
+    padding: 1em 0;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+nav a {
+    color: var(--grey) !important;
+    text-decoration: none;
 }
 
 body{
+    height: 90vh;
     background-color: var(--white);
 }
 
-h1, h2, h3, p{
+h1, h2, h3, p, a{
     font-family: 'Inter', sans-serif;
     color: var(--black);
 }
@@ -78,4 +97,16 @@ h1, h2, h3, p{
 .flex-container{
     display:flex;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.centered{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.active-page{
+    font-weight: 700;
 }
