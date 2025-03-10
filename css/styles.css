@@ -3,9 +3,67 @@
     --white: #f8f8f8;
 }
 
+/* Mobile Styles - below 768px */
+@media screen and (max-width: 767px) {
+    h1 {
+      font-size: 45px;
+    }
+    h2 {
+      font-size: 27px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 17px;
+    }
+    caption {
+      font-size: 14px;
+    }
+  }
+  
+  /* Tablet Styles - 768px to 1023px */
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+      font-size: 55px;
+    }
+    h2 {
+      font-size: 34px;
+    }
+    h3 {
+      font-size: 27px;
+    }
+    p {
+      font-size: 21px;
+    }
+    caption {
+      font-size: 17px;
+    }
+  }
+  
+  /* Desktop Styles - 1024px and above */
+  @media screen and (min-width: 1024px) {
+    h1 {
+      font-size: 52px;
+    }
+    h2 {
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+    }
+    caption {
+      font-size: 13px;
+    }
+  }
+
 *{
     margin: 0;
-    border: 1px solid red; /* For Development Purpose */
+    /* For Development Purpose */
+    border: 1px solid red;
 }
 
 body{
@@ -15,4 +73,9 @@ body{
 h1, h2, h3, p{
     font-family: 'Inter', sans-serif;
     color: var(--black);
+}
+
+.flex-container{
+    display:flex;
+    width: 100%;
 }
