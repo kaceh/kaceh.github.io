@@ -32,6 +32,7 @@
     }
     .text-container {
         margin-bottom: 1em;
+        margin-right: 0 !important;
     }
   }
   
@@ -75,8 +76,9 @@
 
 *{
     margin: 0;
+    box-sizing: border-box;
     /* For Development Purpose */
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 nav {
@@ -106,6 +108,10 @@ h1, h2, h3, p, a{
     color: var(--black);
 }
 
+.title{
+    margin-bottom: 0.2em;
+}
+
 .flex-container{
     display:flex;
     width: 90%;
@@ -124,18 +130,90 @@ h1, h2, h3, p, a{
     font-weight: 700;
 }
 
-img {
-    max-width: 85%;
+.slides-flex img {
     border-radius: 1.5rem;
 }
+
+/* Slider function from: https://www.w3schools.com/howto/howto_js_slideshow.asp */
 
 .slides-container{
     display: flex;
     flex-direction: column;
     max-width: 80%;
     align-items: center;
+    text-align: center;
 }
 
-.flex-component h1 {
+.slides-flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.text-container{
     margin-right: 2em;
 }
+
+.slider-control {
+    text-align: center;
+}
+
+.mySlides {
+    display: none;
+    max-width: 25em;
+}
+
+.mySlides img {
+    max-width: 100%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--grey);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+   .prev:hover, .next:hover {
+    color: rgba(0,0,0,0.8);
+  }
+
+  .dot {
+    cursor: pointer;
+    height: 0.7rem;
+    width: 0.7rem;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  /* Ebd of Slider Function */

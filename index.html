@@ -18,15 +18,39 @@
     <div class="centered">
         <div class="flex-container">
             <div class="text-container flex-component">
-                <h1>Kevin</br>Hadinata</h1>
+                <h1 class="title">Kevin</br>Hadinata</h1>
                 <p>I tell stories through your interface.</p>
             </div>
+            <!-- Slider function from: https://www.w3schools.com/howto/howto_js_slideshow.asp -->    
             <div class="slides-container flex-component">
-                <!-- Image goes here -->
-                <img src="images/image1.png" alt="Image 1">
-                <p>. . .</p>
+                <div class="slides-flex">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <!-- Image goes here -->
+                        <div class="mySlides fade">
+                            <img src="images/Home_Binary.jpg" alt="Slides image of Binary">
+                         </div>
+                         <div class="mySlides fade">
+                            <img src="images/Home_BennettQuest.jpg" alt="Slides image of Bennett's Quest">
+                         </div>
+                         <div class="mySlides fade">
+                            <img src="images/Home_Firstmed.jpg" alt="Slides image of FIRSTMED">
+                         </div>
+                         <div class="mySlides fade">
+                            <img src="images/Home_ITS.jpg" alt="Slides image of ITS Internship Site">
+                     </div>
+                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                 <br>
+                <div class="slider-control">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
             </div>
+            <!-- End of Slider Function -->
         </div>
     </div>
 </body>
+<script src="js/scripts.js"></script>
 </html>
