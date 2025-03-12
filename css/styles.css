@@ -75,7 +75,7 @@
   margin: 0;
   box-sizing: border-box;
   /* For Development Purpose */
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 nav {
@@ -120,11 +120,15 @@ a {
   justify-content: center;
 }
 
-.centered {
+.horizontally-centered {
   display: flex;
-  height: 100%;
-  align-items: center;
   justify-content: center;
+}
+
+.vertically-centered{
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .bold {
