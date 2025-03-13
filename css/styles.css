@@ -17,6 +17,7 @@
   }
   p {
     font-size: 17px;
+    line-height: 28px;
   }
   p.cardCaption {
     font-size: 14px;
@@ -34,8 +35,12 @@
     margin-bottom: 1em;
     margin-right: 0 !important;
   }
+
   .top-about{
     flex-direction: column;
+    margin-bottom:2em !important;
+    padding-bottom:2em;
+    border-bottom: 1px solid var(--grey);
   }
 
   .top-about p {
@@ -45,9 +50,11 @@
   .mid-about{
     flex-direction: column;
     margin-top: 2em !important;
+    padding-bottom:2em;
+    border-bottom: 1px solid var(--grey);
   }
 
-  .mid-about p {
+  .mid-about .introductionText {
     margin-top: 2em;
   }
 
@@ -56,9 +63,41 @@
   }
 
   .quotemark {
-    font-size: 64px !important;
-    margin-top: 0 !important;
-    margin-bottom: -0.5em !important;
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .quote{
+    flex-direction: column;
+  }
+
+  .quotetext {
+    margin-top: 0.5em;
+    margin-left: 0 !important;
+  }
+
+  .about-tools{
+    height: 220px !important;
+  }
+
+  .figma-text{
+    margin-left: 1.6em !important;
+  }
+
+  .tools-img {
+    max-height: 44px !important;
+  }
+
+  .figma-img{
+    max-height: 80px !important;
+  }
+
+  .alt-tools-img-container {
+    width: 160px !important;
+  }
+
+  .figma-text p.cardCaption{
+    margin-bottom: -0.3em;
   }
 }
 
@@ -320,11 +359,12 @@ a {
 
 .top-about {
   display: flex;
+  margin-bottom: 3.5em;
 }
 
 .mid-about {
   display: flex;
-  margin-top: 2em;
+  margin-top: 3.5em;
 }
 
 .page-layout {
@@ -334,16 +374,52 @@ a {
 }
 
 .quotemark {
-  font-family: 'Roboto', sans-serif !important;
-  font-size: 128px;
-  margin-top: 0.4em;
-  margin-bottom: -0.15em;
+  width: 50px;
+  height: 50px;
 }
 
 .quote{
+  display: flex;
   width: 300px;
 }
 
 .quotetext {
   width: 100%;
+  margin-left: 0.8em;
+}
+
+.about-tools {
+  display: flex;
+  justify-content: center;
+  height: 220px;
+}
+
+.figma-container {
+  display:flex;
+  align-items: center;
+}
+
+.tools-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.tools-img {
+  max-height: 55px;
+}
+
+.figma-img{
+  max-height: 100px;
+}
+
+.alt-tools-img-container {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+
+.figma-text {
+  margin-left:1.5em;
 }
