@@ -164,6 +164,10 @@
 
 nav {
   width: 100%;
+  background-color: var(--white);
+  position: sticky;
+  top:0;
+  z-index: 100;
 }
 
 .nav-flex {
@@ -180,8 +184,19 @@ nav a {
 }
 
 body {
-  height: 90vh;
+  display: flex;
   background-color: var(--white);
+  overflow-y: scroll;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+  flex-direction: column;
 }
 
 h1,
@@ -212,7 +227,6 @@ a {
 .vertically-centered{
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
 .bold {
