@@ -2,6 +2,7 @@
   --black: #0a0a0a;
   --white: #f8f8f8;
   --grey: #919090;
+  --red: #FF0000;
 }
 
 /* Mobile Styles - below 768px */
@@ -15,7 +16,7 @@
   h3 {
     font-size: 22px;
   }
-  p {
+  p, label {
     font-size: 17px;
     line-height: 28px;
   }
@@ -108,6 +109,24 @@
     width: 100% !important;
   }
 
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .form-container {
+    width: 100% !important;
+  }
+  
+  .contact-list-container {
+    width: 100% !important;
+    margin-top: 2em;
+  }
+
+  .button-container {
+    display: flex;
+    width: 90%;
+    justify-content: flex-end;
+  }
 }
 
 /* Tablet Styles - 768px to 1023px */
@@ -121,7 +140,7 @@
   h3 {
     font-size: 27px;
   }
-  p {
+  p, label {
     font-size: 21px;
   }
   p.cardCaption {
@@ -140,7 +159,7 @@
   h3 {
     font-size: 20px;
   }
-  p {
+  p, label {
     font-size: 16px;
     line-height: 24px;
   }
@@ -193,17 +212,23 @@ body {
 
 .content {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex:1;
   flex-direction: column;
+}
+
+.homepage .content {
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
 h2,
 h3,
 p,
-a {
+a,
+label,
+input[type="email"],
+textarea {
   font-family: "Inter", sans-serif;
   color: var(--black);
 }
@@ -480,5 +505,72 @@ a {
 }
 
 .last-section {
-  padding-bottom: 100px;
+  padding-bottom: 80px;
+}
+
+/* Contact page */
+.contact-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.form-container {
+  width: 55%;
+}
+
+.contact-list-container {
+  width: 35%;
+}
+
+.contact-list-entry {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.contact-list-entry img {
+  width: 40px;
+  margin-right: 1em;
+}
+
+label {
+  font-weight: bold;
+}
+
+.messageTextArea {
+  width: 90%;
+  min-height: 10em;
+}
+
+.emailInput {
+  width: 90%;
+  border: 1px solid var(--black);
+}
+
+textarea, input[type="email"] {
+  border-radius: 0.2rem;
+  border: 1px solid var(--black);
+}
+
+input[type="submit"] {
+  display: inline-flex;
+  padding: 9px 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 0.5px solid var(--black);
+  background: var(--white);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+input[type="submit"]:hover {
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.red {
+  color: var(--red);
 }
