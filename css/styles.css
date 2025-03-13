@@ -99,6 +99,15 @@
   .figma-text p.cardCaption{
     margin-bottom: -0.3em;
   }
+
+  .work{
+    margin-top: 2em;
+  }
+
+  .history>div {
+    width: 100% !important;
+  }
+
 }
 
 /* Tablet Styles - 768px to 1023px */
@@ -208,6 +217,10 @@ a {
 
 .bold {
   font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .slides-flex img {
@@ -422,4 +435,36 @@ a {
 
 .figma-text {
   margin-left:1.5em;
+}
+
+.history {
+  align-items: flex-start;
+}
+
+.history>div {
+  width: 45%;
+}
+
+.education-entry {
+  margin-top:1.5em;
+}
+
+.linkedinBtn {
+  margin-top: 1em;
+  padding: 9px 40px;
+  border-radius: 25px;
+  border: 0.5px solid var(--black);
+  background: var(--white);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.linkedinBtn:hover {
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.last-section {
+  padding-bottom: 100px;
 }
