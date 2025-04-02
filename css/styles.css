@@ -758,6 +758,11 @@ input[type="submit"]:hover {
   border-radius: 25px;
 }
 
+.project-head-image:hover{
+  transform: rotateY(5deg) rotateX(9deg);
+  transition: transform 0.3s ease;
+}
+
 .project-highlight-image {
   position: relative;
   height: 800px;
@@ -788,6 +793,16 @@ input[type="submit"]:hover {
 .hi-back {
   transform: translate(0px, 0px) rotate(15deg);
   z-index: 1;
+}
+
+.hi-front:hover{
+  transform: translate(-155px, 230px) rotate(-8deg);
+  transition: transform 0.3s ease;
+}
+
+.hi-back:hover{
+  transform: translate(15px, 15px) rotate(11deg);
+  transition: transform 0.3s ease;
 }
 
 .hl-image-content {
@@ -845,6 +860,12 @@ input[type="submit"]:hover {
 
 .grid-gallery .grid-item:nth-child(4){
   margin-top: 40px;
+}
+
+.grid-item img:hover{
+  transform: translate(-3px, 17px) rotate(-2deg);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.20);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-navigation-container {
