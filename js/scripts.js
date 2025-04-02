@@ -29,8 +29,14 @@ if (window.location.pathname === '/') {
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
   }
-  
+
   // End of Slider function
+
+  function autoSlide() {
+    plusSlides(1);
+  }
+
+  setInterval(autoSlide, 3000);
 }
 
 // About page, button redirect
