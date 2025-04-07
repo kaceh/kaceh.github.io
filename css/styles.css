@@ -995,3 +995,7 @@ input[type="submit"]:hover {
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.20);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.cardTitle {
+  display: none;
+}
