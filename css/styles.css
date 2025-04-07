@@ -287,6 +287,11 @@
     display: inline-block !important;
     margin-top: 1em;
   }
+
+  .dot{  
+    height: 0.5rem !important;
+    width: 0.5rem !important;
+  }
 }
 
 @media screen and (max-width: 435px) {
