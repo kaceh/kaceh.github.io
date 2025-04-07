@@ -989,3 +989,9 @@ input[type="submit"]:hover {
 .open-image{
   display: none;
 }
+
+.projectCard img:hover{
+  transform: translate(-10px, -2px);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.20);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
