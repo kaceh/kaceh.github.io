@@ -462,6 +462,12 @@ nav a {
   text-decoration: none;
 }
 
+.nav-flex a:hover {
+  font-size: 17px !important;
+  color: #666565 !important;
+  transition: font-size 0.3s, color 0.3s;
+}
+
 .mobile-nav,
 .nav-links {
   display: none;
