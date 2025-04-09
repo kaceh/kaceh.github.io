@@ -38,17 +38,18 @@
           <p>Please contact me about any potential opportunities.</p>
           <div class="contact-container">
             <div class="form-container">
-              <form action="/" method="post">
-                <label for="email">Email Address: <span class="red">*</span></label><br>
-                <input type="email" id="email" name="email" class="emailInput" required><br><br>
+              <form id="contactForm" action="https://formspree.io/f/xkgjkgna" method="POST">
+                <label for="_replyto">Email Address: <span class="red">*</span></label><br>
+                <input type="email" id="_replyto" name="_replyto" class="emailInput" required><br><br>
               
                 <label for="message">Message: <span class="red">*</span></label><br>
                 <textarea id="message" name="message" class="messageTextArea" required></textarea><br><br>
               
                 <div class="button-container">
-                  <input type="submit" value="Send">
+                  <button type="submit">Send</button>
                 </div>
               </form>
+              <p id="form-message" class="bold"></p>
             </div>
             <div class="last-section contact-list-container">
               <h3>Or find me here:</h3>

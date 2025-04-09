@@ -146,6 +146,7 @@ if (window.location.pathname === '/projects.html') {
   }
 }
 
+// Respective project pages
 if (window.location.pathname === '/projects/bennettquest.html' ||
     window.location.pathname === '/projects/binary.html' ||
     window.location.pathname === '/projects/firstmed.html' ||
@@ -191,4 +192,95 @@ if (window.location.pathname === '/projects/bennettquest.html' ||
         window.scrollTo(0, startPosition);
         requestAnimationFrame(animateScroll);
       }
+}
+
+// Contact Page
+if (window.location.pathname === '/contact.html') {
+  const form = document.getElementById('contactForm');
+  const messageDiv = document.getElementById('form-message');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const formElements = form.querySelectorAll('input, textarea');
+
+  form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const jsonData = {};
+      for (const [key, value] of formData.entries()) {
+          jsonData[key] = value;
+      }
+
+      formElements.forEach(element => {
+          element.disabled = true;
+      });
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      form.style.cursor = 'wait';
+
+      // console.log("JSON Data being sent:", jsonData);
+
+      try {
+          const response = await fetch(form.action, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(jsonData)
+          });
+
+          const enableForm = () => {
+              formElements.forEach(element => {
+                  element.disabled = false;
+              });
+              submitButton.disabled = false;
+              submitButton.textContent = 'Send';
+              form.style.cursor = 'auto';
+          };
+
+          if (response.ok) {
+              messageDiv.textContent = "Your message has been successfully sent!";
+              messageDiv.classList.add('show');
+
+              form.reset();
+              enableForm();
+
+              setTimeout(() => {
+                  messageDiv.style.opacity = 0;
+                  setTimeout(() => {
+                      messageDiv.classList.remove('show');
+                      messageDiv.style.display = 'none';
+                      messageDiv.style.opacity = 1;
+                  }, 1000);
+              }, 3000);
+          } else {
+              // console.error('Form submission failed:', response);
+              const responseText = await response.text();
+              // console.log('Response Text:', responseText);
+              messageDiv.textContent = "There was an error sending your message. Please try again later.";
+              messageDiv.classList.add('show');
+              enableForm();
+              setTimeout(() => {
+                  messageDiv.style.opacity = 0;
+                  setTimeout(() => {
+                      messageDiv.classList.remove('show');
+                      messageDiv.style.display = 'none';
+                      messageDiv.style.opacity = 1;
+                  }, 1000);
+              }, 3000);
+          }
+      } catch (error) {
+          // console.error('There was an error sending the form:', error);
+          messageDiv.textContent = "There was an error sending your message. Please try again later.";
+          messageDiv.classList.add('show');
+          enableForm();
+          setTimeout(() => {
+              messageDiv.style.opacity = 0;
+              setTimeout(() => {
+                      messageDiv.classList.remove('show');
+                      messageDiv.style.display = 'none';
+                      messageDiv.style.opacity = 1;
+                  }, 1000);
+              }, 3000);
+      }
+  });
 }
