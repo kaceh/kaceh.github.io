@@ -145,3 +145,50 @@ if (window.location.pathname === '/projects.html') {
       });
   }
 }
+
+if (window.location.pathname === '/projects/bennettquest.html' ||
+    window.location.pathname === '/projects/binary.html' ||
+    window.location.pathname === '/projects/firstmed.html' ||
+    window.location.pathname === '/projects/simmagang.html' ){
+      const btns = document.querySelectorAll('.project-navigation');
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', function(event) {
+          event.preventDefault();
+          sessionStorage.setItem('previousScrollY', window.scrollY);
+          window.location.href = this.getAttribute('href');
+        })
+      })
+      
+      if (sessionStorage.getItem('previousScrollY') !== null) {
+        const startPosition = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const targetPosition = 0;
+        const duration = 1000;
+        const startTime = performance.now();
+
+        function easeInOutCubic(t) {
+          // Calculation for ease in and out
+          // https://gist.github.com/gre/1650294
+            return t < 0.5 ? 4*t*t*t : (t-1) * (2*t-2) * (2*t-2) + 1;
+        }
+
+        function animateScroll() {
+            const currentTime = performance.now();
+            const timeElapsed = currentTime - startTime;
+
+            if (timeElapsed < duration) {
+                const t = timeElapsed / duration;
+                const easedT = easeInOutCubic(t);
+                const newPosition = startPosition + (targetPosition - startPosition) * easedT;
+                window.scrollTo(0, newPosition);
+                requestAnimationFrame(animateScroll);
+            } else {
+                window.scrollTo(0, targetPosition);
+                sessionStorage.removeItem('previousScrollY');
+            }
+        }
+
+        window.scrollTo(0, startPosition);
+        requestAnimationFrame(animateScroll);
+      }
+}
