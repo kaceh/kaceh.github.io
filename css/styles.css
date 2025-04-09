@@ -891,6 +891,7 @@ input[type="submit"]:hover {
   transform: rotateY(-15deg) rotateX(5deg);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
   border-radius: 25px;
+  width: 100%;
 }
 
 .project-head-image:hover{
