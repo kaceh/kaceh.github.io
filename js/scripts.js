@@ -1,37 +1,37 @@
+let hamburger = document.getElementById("hamburger");
+let overlay = document.getElementById("overlay");
+let navlinks = document.getElementById("nav-links");
+let close = document.getElementById("close");
+
+hamburger.addEventListener('click', function() {
+  overlay.classList.add("openOverlay");
+  overlay.classList.remove("closeOverlay");
+  overlay.style.display = 'block';
+  navlinks.classList.add("visible");
+});
+
+overlay.addEventListener('click', function() {
+  overlay.classList.add("closeOverlay");
+  overlay.classList.remove("openOverlay");
+  navlinks.classList.remove("visible");
+
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 300);
+})
+
+close.addEventListener('click', function() {
+  overlay.classList.add("closeOverlay");
+  overlay.classList.remove("openOverlay");
+  navlinks.classList.remove("visible");
+
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 300);
+})
+
 // Homepage
 if (window.location.pathname === '/') {
-  let hamburger = document.getElementById("hamburger");
-  let overlay = document.getElementById("overlay");
-  let navlinks = document.getElementById("nav-links");
-  let close = document.getElementById("close");
-
-  hamburger.addEventListener('click', function() {
-    overlay.classList.add("openOverlay");
-    overlay.classList.remove("closeOverlay");
-    overlay.style.display = 'block';
-    navlinks.classList.add("visible");
-  });
-
-  overlay.addEventListener('click', function() {
-    overlay.classList.add("closeOverlay");
-    overlay.classList.remove("openOverlay");
-    navlinks.classList.remove("visible");
-
-    setTimeout(() => {
-      overlay.style.display = 'none';
-    }, 300);
-  })
-
-  close.addEventListener('click', function() {
-    overlay.classList.add("closeOverlay");
-    overlay.classList.remove("openOverlay");
-    navlinks.classList.remove("visible");
-
-    setTimeout(() => {
-      overlay.style.display = 'none';
-    }, 300);
-  })
-
   // Slider Function from: https://www.w3schools.com/howto/howto_js_slideshow.asp
   let slideIndex = 1;
   showSlides(slideIndex);
