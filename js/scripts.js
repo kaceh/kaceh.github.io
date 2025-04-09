@@ -83,10 +83,18 @@ if (window.location.pathname === '/') {
 // About page, button redirect
 if (window.location.pathname === '/about.html') {
   const linkedinBtn = document.querySelector('.linkedinBtn');
+  const cvBtn = document.querySelector('.cvBtn');
+
   if (linkedinBtn) {
     linkedinBtn.addEventListener('click', function() {
       window.open('https://www.linkedin.com/in/kevinc45/', '_blank');
     });
+  }
+
+  if (cvBtn) {
+    cvBtn.addEventListener('click', function(){
+      window.open('https://drive.google.com/file/d/1BC780fTM1E0hdGjYt9EyOLRjs26CPawJ/view?usp=sharing', '_blank');
+    })
   }
 }
 
