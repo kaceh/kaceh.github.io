@@ -35,15 +35,26 @@ if (window.location.pathname === '/') {
   // Slider Function from: https://www.w3schools.com/howto/howto_js_slideshow.asp
   let slideIndex = 1;
   showSlides(slideIndex);
-  
+  let autoSlideInterval;
+
+  function startAutoSlide(){
+    autoSlideInterval = setInterval(autoSlide, 3000);  
+  }
+
+  startAutoSlide();
+
   // Next/previous controls
   function plusSlides(n) {
+    clearInterval(autoSlideInterval);
     showSlides(slideIndex += n);
+    startAutoSlide();
   }
   
   // Thumbnail image controls
   function currentSlide(n) {
+    clearInterval(autoSlideInterval);
     showSlides(slideIndex = n);
+    startAutoSlide();
   }
   
   function showSlides(n) {
@@ -67,8 +78,6 @@ if (window.location.pathname === '/') {
   function autoSlide() {
     plusSlides(1);
   }
-
-  setInterval(autoSlide, 3000);
 }
 
 // About page, button redirect
