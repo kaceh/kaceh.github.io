@@ -93,7 +93,7 @@ if (window.location.pathname === '/about.html') {
 
   if (cvBtn) {
     cvBtn.addEventListener('click', function(){
-      window.open('https://drive.google.com/file/d/1BC780fTM1E0hdGjYt9EyOLRjs26CPawJ/view?usp=sharing', '_blank');
+      window.open('https://drive.google.com/file/d/1g5R7TmaCJ6TrddAwxUoXwo31CWBMM-yL/view?usp=sharing', '_blank');
     })
   }
 }
