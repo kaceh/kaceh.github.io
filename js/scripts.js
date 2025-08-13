@@ -31,7 +31,7 @@ close.addEventListener('click', function() {
 })
 
 // Homepage
-if (window.location.pathname === '/') {
+if (window.location.pathname === '/ux.html') {
   // Slider Function from: https://www.w3schools.com/howto/howto_js_slideshow.asp
   let slideIndex = 1;
   showSlides(slideIndex);
